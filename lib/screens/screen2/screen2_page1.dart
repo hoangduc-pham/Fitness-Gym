@@ -136,7 +136,7 @@ class _Screen2 extends State<Screen2> with SingleTickerProviderStateMixin {
                               height: 8.0,
                             ),
                             Text(
-                              'Thời gian: ${itemList1[index].calotieuhao} phút \nLượng Calo tiêu hao: ${itemList1[index].calotieuhao}',
+                              'Thời gian: ${itemList1[index].sophut} phút \nLượng Calo tiêu hao: ${itemList1[index].calotieuhao}',
                               style: TextStyle(color: Colors.black),
                             ),
                           ],

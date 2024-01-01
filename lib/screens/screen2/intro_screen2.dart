@@ -42,15 +42,21 @@ class IntroScreen2 extends StatelessWidget {
               ],
             ),
             Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Text(
-                  'Giú bạn quản lý chế độ ăn uống một cách thông minh và dễ dàng. Bạn có thể nhập thông tin về lượng calo và protein tiêu thụ hàng ngày, từ đó theo dõi và đánh giá chất lượng dinh dưỡng của bữa ăn.Cung cấp cho bạn thông tin tổng quan về dinh dưỡng một cách rõ ràng và dễ hiểu, giúp bạn hiểu rõ hơn về chế độ ăn uống của mình. Bằng cách này, bạn có thể điều chỉnh và cải thiện chế độ ăn uống của mình để đạt được mục tiêu về sức khỏe và cải thiện thể chất một cách hiệu quả',
-                  style: TextStyle(fontWeight: FontWeight.w400, color: Colors.white),
-                )),
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                'Tính năng sắp xếp lịch tập dựa trên thời gian từng buổi trong tuần, giúp người dùng lên kế hoạch tập luyện theo ngày. Bạn có thể xác định các buổi tập cụ thể cho mỗi ngày, như buổi tập gym vào thứ Hai, yoga và tập giãn cơ vào thứ Ba, ngày nghỉ vào thứ Tư, và các buổi tập khác tuỳ thuộc vào lịch trình của bạn.Ứng dụng cung cấp bảng lịch tuần giúp dễ dàng quản lý lịch trình tập luyện theo từng ngày.',
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  color: Colors.white,
+                  fontSize: 16, // Đổi kích thước font
+                  letterSpacing: 0.5, // Điều chỉnh khoảng cách giữa các chữ
+                  height: 1.5, // Điều chỉnh khoảng cách giữa các dòng
+                ),
+              ),
+            ),
             SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
-                // Hành động khi nút được nhấn
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => Screen2()),
@@ -59,14 +65,16 @@ class IntroScreen2 extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0), // Độ cong của góc nút
-                ),
-                padding: EdgeInsets.symmetric(
-                    horizontal: 20, vertical: 10), // Khoảng cách nội dung nút và viền nút
+                ), backgroundColor: Colors.yellow,
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Khoảng cách nội dung nút và viền nút
+                elevation: 5, // Độ nổi của đổ bóng
+                shadowColor: Colors.grey, // Màu nền của nút là màu nâu
               ),
               child: Text(
                 'Bắt đầu khám phá',
                 style: TextStyle(
                   fontSize: 20, // Kích thước chữ
+                  color: Color.fromRGBO(23, 43, 68, 1), // Màu chữ là màu trắng để tương phản với màu nền
                 ),
               ),
             ),

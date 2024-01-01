@@ -33,7 +33,6 @@ class IntroScreen5 extends StatelessWidget {
           children: [
             Row(
               children: [
-                SizedBox(width: 50),
                 Expanded(
                   child: Hero(
                     tag: "${fitnessfunction.id}",
@@ -46,11 +45,18 @@ class IntroScreen5 extends StatelessWidget {
               ],
             ),
             Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Text(
-                  'Giú bạn quản lý chế độ ăn uống một cách thông minh và dễ dàng. Bạn có thể nhập thông tin về lượng calo và protein tiêu thụ hàng ngày, từ đó theo dõi và đánh giá chất lượng dinh dưỡng của bữa ăn.Cung cấp cho bạn thông tin tổng quan về dinh dưỡng một cách rõ ràng và dễ hiểu, giúp bạn hiểu rõ hơn về chế độ ăn uống của mình. Bằng cách này, bạn có thể điều chỉnh và cải thiện chế độ ăn uống của mình để đạt được mục tiêu về sức khỏe và cải thiện thể chất một cách hiệu quả',
-                  style: TextStyle(fontWeight: FontWeight.w400, color: Colors.white),
-                )),
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                'Nguồn thông tin phong phú giúp người dùng tận dụng kiến thức và kinh nghiệm để cải thiện hoạt động tập luyện của họ. Bao gồm gợi ý về các bài tập đa dạng, mẹo tập luyện chuyên sâu từ các chuyên gia, thông tin dinh dưỡng và sức khỏe, chức năng này mang lại lợi ích to lớn bằng cách giúp người dùng tối ưu hóa và đa dạng hóa quá trình tập luyện.',
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  color: Colors.white,
+                  fontSize: 16, // Đổi kích thước font
+                  letterSpacing: 0.5, // Điều chỉnh khoảng cách giữa các chữ
+                  height: 1.5, // Điều chỉnh khoảng cách giữa các dòng
+                ),
+              ),
+            ),
             SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
@@ -63,6 +69,7 @@ class IntroScreen5 extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),
                 ),
+                backgroundColor: Colors.redAccent,
                 padding: EdgeInsets.symmetric(
                     horizontal: 20, vertical: 10),
               ),

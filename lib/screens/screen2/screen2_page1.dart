@@ -38,7 +38,7 @@ class _Screen2 extends State<Screen2> with SingleTickerProviderStateMixin {
         backgroundColor:  Colors.brown,
         title: Text('Sắp xếp lịch tập'),
         bottom: TabBar(
-          indicatorColor: Colors.red,
+          indicatorColor: Colors.cyan,
           controller: _tabController1,
           tabs: [
             Tab(text: 'Thông tin bài tập'),

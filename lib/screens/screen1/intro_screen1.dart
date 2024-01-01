@@ -42,11 +42,18 @@ class IntroScreen1 extends StatelessWidget {
               ],
             ),
             Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Text(
-                  'Giúp bạn quản lý chế độ ăn uống một cách thông minh và dễ dàng. Bạn có thể nhập thông tin về lượng calo và protein tiêu thụ hàng ngày, từ đó theo dõi và đánh giá chất lượng dinh dưỡng của bữa ăn.Cung cấp cho bạn thông tin tổng quan về dinh dưỡng một cách rõ ràng và dễ hiểu, giúp bạn hiểu rõ hơn về chế độ ăn uống của mình. Bằng cách này, bạn có thể điều chỉnh và cải thiện chế độ ăn uống của mình để đạt được mục tiêu về sức khỏe và cải thiện thể chất một cách hiệu quả',
-                  style: TextStyle(fontWeight: FontWeight.w400, color: Colors.white),
-                )),
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                'Tính năng tính toán dinh dưỡng theo số tiền chi trả cho mỗi bữa ăn giúp người dùng xây dựng chế độ ăn uống cân đối. Bằng cách nhập ngân sách cho bữa ăn, người dùng nhận được gợi ý thực phẩm phù hợp. Ứng dụng tính toán calo, protein, carb và chất béo từ các món đề xuất, đảm bảo khẩu phần đủ chất và đáp ứng nhu cầu dinh dưỡng cá nhân. Điều này giúp tiết kiệm chi phí và duy trì lối sống ăn uống lành mạnh.',
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  color: Colors.white,
+                  fontSize: 16, // Đổi kích thước font
+                  letterSpacing: 0.5, // Điều chỉnh khoảng cách giữa các chữ
+                  height: 1.5, // Điều chỉnh khoảng cách giữa các dòng
+                ),
+              ),
+            ),
             SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
@@ -57,18 +64,21 @@ class IntroScreen1 extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                padding: EdgeInsets.symmetric(
-                    horizontal: 20, vertical: 10),
+                  borderRadius: BorderRadius.circular(15.0),
+                ), backgroundColor: Colors.redAccent,
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                elevation: 15, // Độ nổi của đổ bóng
+                shadowColor: Colors.grey, // Màu sắc nền của nút
               ),
               child: Text(
                 'Bắt đầu khám phá',
                 style: TextStyle(
                   fontSize: 20,
+                  color: Colors.white, // Màu chữ của nút
                 ),
               ),
-            ),
+            )
+
           ],
         ),
       ),

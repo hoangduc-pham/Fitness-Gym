@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:shop_app/models/extension_format_number.dart';
 import 'item.dart';
 
 class Screen2Page2 extends StatefulWidget {
@@ -10,8 +9,7 @@ class Screen2Page2 extends StatefulWidget {
   _Screen2Page2 createState() => _Screen2Page2();
 }
 
-class _Screen2Page2 extends State<Screen2Page2>
-    with SingleTickerProviderStateMixin {
+class _Screen2Page2 extends State<Screen2Page2> with SingleTickerProviderStateMixin {
   late TabController _tabController1;
   TextEditingController capacityController1 = TextEditingController();
   int maxcalotieuhao2 = 0;
@@ -59,7 +57,7 @@ class _Screen2Page2 extends State<Screen2Page2>
               builder: (BuildContext context) {
                 return AlertDialog(
                     content: Container(
-                      constraints: BoxConstraints(maxHeight: 150),
+                  constraints: BoxConstraints(maxHeight: 150),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10.0),
@@ -82,21 +80,21 @@ class _Screen2Page2 extends State<Screen2Page2>
                         ),
                       ),
                       SizedBox(height: 16.0),
-                      if(index==0)
+                      if (index == 0)
                         ElevatedButton(
                           onPressed: () {
                             calculateAndSetKnapsack(2); // Gọi hàm tính toán cho buổi 2
                           },
                           child: Text('Xác nhận'),
                         ),
-                      if(index==1)
+                      if (index == 1)
                         ElevatedButton(
                           onPressed: () {
                             calculateAndSetKnapsack(3); // Gọi hàm tính toán cho buổi 2
                           },
                           child: Text('Xác nhận'),
                         ),
-                      if(index==2)
+                      if (index == 2)
                         ElevatedButton(
                           onPressed: () {
                             Navigator.pop(context);
@@ -104,7 +102,7 @@ class _Screen2Page2 extends State<Screen2Page2>
                           },
                           child: Text('Xác nhận'),
                         ),
-                      if(index==3)
+                      if (index == 3)
                         ElevatedButton(
                           onPressed: () {
                             Navigator.pop(context);
@@ -112,7 +110,7 @@ class _Screen2Page2 extends State<Screen2Page2>
                           },
                           child: Text('Xác nhận'),
                         ),
-                      if(index==4)
+                      if (index == 4)
                         ElevatedButton(
                           onPressed: () {
                             Navigator.pop(context);
@@ -120,7 +118,7 @@ class _Screen2Page2 extends State<Screen2Page2>
                           },
                           child: Text('Xác nhận'),
                         ),
-                      if(index==5)
+                      if (index == 5)
                         ElevatedButton(
                           onPressed: () {
                             calculateAndSetKnapsack(7); // Gọi hàm tính toán cho buổi 2
@@ -133,25 +131,56 @@ class _Screen2Page2 extends State<Screen2Page2>
               },
             );
           },
-          child: Container(
+          child:Container(
             margin: EdgeInsets.all(9.0),
-            color: Colors.blue, // Màu nền của mỗi ô
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12.0),
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Colors.indigo,
+                  Colors.cyan, // Thay đổi màu theo nhu cầu của bạn
+                ],
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.3),
+                  blurRadius: 5.0,
+                  spreadRadius: 2.0,
+                  offset: Offset(0, 3),
+                ),
+              ],
+            ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   'Thứ ${index + 2}',
-                  style: TextStyle(color: Colors.white, fontSize: 18.0),
+                  style: TextStyle(
+                    color: Colors.yellow, // Thay đổi màu sắc tùy thuộc vào sự lựa chọn của bạn
+                    fontSize: 20.0, // Tăng kích thước văn bản
+                    fontWeight: FontWeight.bold, // In đậm văn bản
+                    shadows: [
+                      Shadow(
+                        blurRadius: 4,
+                        color: Colors.black.withOpacity(0.3),
+                        offset: Offset(2, 2),
+                      ),
+                    ],
+                  ),
                 ),
+
                 Text(
                   'Tổng lượng Calo tiêu hao: ',
                   style: TextStyle(color: Colors.white, fontSize: 14.0),
-                ), // Chỉ hiển thị maxcalotieuhao của ô đầu tiên
-                if (index == 0)
-                Text(
-                  '$maxcalotieuhao2',
-                  style: TextStyle(color: Colors.white, fontSize: 14.0),
                 ),
+                // Chỉ hiển thị maxcalotieuhao của ô đầu tiên
+                if (index == 0)
+                  Text(
+                    '$maxcalotieuhao2',
+                    style: TextStyle(color: Colors.white, fontSize: 14.0),
+                  ),
                 if (index == 1)
                   Text(
                     '$maxcalotieuhao3',
@@ -178,17 +207,22 @@ class _Screen2Page2 extends State<Screen2Page2>
                     style: TextStyle(color: Colors.white, fontSize: 14.0),
                   ),
                 Text('Danh sách bài tập :',
-                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)), // Chỉ hiển thị maxcalotieuhao của ô đầu tiên
+                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                // Chỉ hiển thị maxcalotieuhao của ô đầu tiên
                 Expanded(
                   child: ListView.builder(
                     itemExtent: 27.0,
-                    itemCount: index == 0 ? selectedItems2.length
-                              : (index==1 ? selectedItems3.length
-                              : (index==2 ? selectedItems4.length
-                              : (index==3 ? selectedItems5.length
-                              : (index==4 ? selectedItems6.length
-                              : (index==5 ? selectedItems7.length
-                              :0))))),
+                    itemCount: index == 0
+                        ? selectedItems2.length
+                        : (index == 1
+                            ? selectedItems3.length
+                            : (index == 2
+                                ? selectedItems4.length
+                                : (index == 3
+                                    ? selectedItems5.length
+                                    : (index == 4
+                                        ? selectedItems6.length
+                                        : (index == 5 ? selectedItems7.length : 0))))),
                     itemBuilder: (context, ItemIndex) {
                       return ListTile(
                         title: Container(
@@ -201,13 +235,19 @@ class _Screen2Page2 extends State<Screen2Page2>
                             children: [
                               Expanded(
                                 child: Text(
-                                    index==0 ? '${selectedItems2[ItemIndex].namebaitap}'
-                                  :(index==1 ?'${selectedItems3[ItemIndex].namebaitap}'
-                                    :(index==2 ? '${selectedItems4[ItemIndex].namebaitap}'
-                                    :(index==3 ? '${selectedItems5[ItemIndex].namebaitap}'
-                                    :(index==4 ? '${selectedItems6[ItemIndex].namebaitap}'
-                                    :(index==5 ?'${selectedItems7[ItemIndex].namebaitap}'
-                                    :''))))),
+                                  index == 0
+                                      ? '${selectedItems2[ItemIndex].namebaitap}'
+                                      : (index == 1
+                                          ? '${selectedItems3[ItemIndex].namebaitap}'
+                                          : (index == 2
+                                              ? '${selectedItems4[ItemIndex].namebaitap}'
+                                              : (index == 3
+                                                  ? '${selectedItems5[ItemIndex].namebaitap}'
+                                                  : (index == 4
+                                                      ? '${selectedItems6[ItemIndex].namebaitap}'
+                                                      : (index == 5
+                                                          ? '${selectedItems7[ItemIndex].namebaitap}'
+                                                          : ''))))),
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
@@ -216,13 +256,19 @@ class _Screen2Page2 extends State<Screen2Page2>
                               ),
                               Expanded(
                                 child: Text(
-                                  index==0 ? '${selectedItems2[ItemIndex].sophut} phút'
-                                      :(index==1 ?'${selectedItems3[ItemIndex].sophut} phút'
-                                      :(index==2 ? '${selectedItems4[ItemIndex].sophut} phút'
-                                      :(index==3 ? '${selectedItems5[ItemIndex].sophut} phút'
-                                      :(index==4 ? '${selectedItems6[ItemIndex].sophut} phút'
-                                      :(index==5 ?'${selectedItems7[ItemIndex].sophut} phút'
-                                      :''))))),
+                                  index == 0
+                                      ? '${selectedItems2[ItemIndex].sophut} phút'
+                                      : (index == 1
+                                          ? '${selectedItems3[ItemIndex].sophut} phút'
+                                          : (index == 2
+                                              ? '${selectedItems4[ItemIndex].sophut} phút'
+                                              : (index == 3
+                                                  ? '${selectedItems5[ItemIndex].sophut} phút'
+                                                  : (index == 4
+                                                      ? '${selectedItems6[ItemIndex].sophut} phút'
+                                                      : (index == 5
+                                                          ? '${selectedItems7[ItemIndex].sophut} phút'
+                                                          : ''))))),
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
@@ -278,6 +324,7 @@ class _Screen2Page2 extends State<Screen2Page2>
       }
     });
   }
+
   Future<void> _saveitemList1() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     List<String> itemList1Json =

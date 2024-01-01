@@ -41,11 +41,18 @@ class IntroScreen6 extends StatelessWidget {
               ],
             ),
             Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Text(
-                  'Giú bạn quản lý chế độ ăn uống một cách thông minh và dễ dàng. Bạn có thể nhập thông tin về lượng calo và protein tiêu thụ hàng ngày, từ đó theo dõi và đánh giá chất lượng dinh dưỡng của bữa ăn.Cung cấp cho bạn thông tin tổng quan về dinh dưỡng một cách rõ ràng và dễ hiểu, giúp bạn hiểu rõ hơn về chế độ ăn uống của mình. Bằng cách này, bạn có thể điều chỉnh và cải thiện chế độ ăn uống của mình để đạt được mục tiêu về sức khỏe và cải thiện thể chất một cách hiệu quả',
-                  style: TextStyle(color: Color.fromRGBO(23, 43, 68, 1),fontWeight: FontWeight.w400),
-                )),
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                'Cung cấp thông tin đa dạng về dinh dưỡng, thể hình và sức khỏe mới nhất. Bao gồm các bài viết, tin tức, lời khuyên thực tế và video hướng dẫn, chức năng này giúp người dùng tiếp cận thông tin hữu ích để cải thiện chế độ ăn uống, tập luyện và duy trì một lối sống lành mạnh.',
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  color: Color.fromRGBO(23, 43, 68, 1),
+                  fontSize: 16, // Đổi kích thước font
+                  letterSpacing: 0.5, // Điều chỉnh khoảng cách giữa các chữ
+                  height: 1.5, // Điều chỉnh khoảng cách giữa các dòng
+                ),
+              ),
+            ),
             SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
@@ -58,13 +65,14 @@ class IntroScreen6 extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),
                 ),
+                backgroundColor: Colors.orange,
                 padding: EdgeInsets.symmetric(
                     horizontal: 20, vertical: 10),
               ),
               child: Text(
                 'Bắt đầu khám phá',
                 style: TextStyle(
-                  fontSize: 20, // Kích thước chữ
+                  fontSize: 20, color: Color.fromRGBO(23, 43, 68, 1), // Kích thước chữ
                 ),
               ),
             ),

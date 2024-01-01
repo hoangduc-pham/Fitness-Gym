@@ -107,7 +107,7 @@ class _Screen4PageState extends State<Screen4Page> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Tối ưu đường đi'),
-        backgroundColor: Color(0xFFCC66CC),
+        backgroundColor: Color(0xFF6A0DAD),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

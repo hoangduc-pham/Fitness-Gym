@@ -7,8 +7,8 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="${applicationName}"
-        android:label="BazzarBay"
-        android:icon="@mipmap/logoapp">
+        android:label="Dinh dưỡng thể hình"
+        android:icon="@mipmap/logodatn">
         <activity
             android:name=".MainActivity"
             android:exported="true"

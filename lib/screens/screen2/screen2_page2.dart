@@ -131,7 +131,7 @@ class _Screen2Page2 extends State<Screen2Page2> with SingleTickerProviderStateMi
               },
             );
           },
-          child:Container(
+          child: Container(
             margin: EdgeInsets.all(9.0),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12.0),
@@ -158,9 +158,12 @@ class _Screen2Page2 extends State<Screen2Page2> with SingleTickerProviderStateMi
                 Text(
                   'Thứ ${index + 2}',
                   style: TextStyle(
-                    color: Colors.yellow, // Thay đổi màu sắc tùy thuộc vào sự lựa chọn của bạn
-                    fontSize: 20.0, // Tăng kích thước văn bản
-                    fontWeight: FontWeight.bold, // In đậm văn bản
+                    color: Colors.yellow,
+                    // Thay đổi màu sắc tùy thuộc vào sự lựa chọn của bạn
+                    fontSize: 20.0,
+                    // Tăng kích thước văn bản
+                    fontWeight: FontWeight.bold,
+                    // In đậm văn bản
                     shadows: [
                       Shadow(
                         blurRadius: 4,

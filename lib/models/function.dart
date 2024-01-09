@@ -34,7 +34,7 @@ List<FitnessFunction> fitnessfunctions = [
       color: Color(0xFFFFCC00)),
   FitnessFunction(
       id: 4,
-      title: "Chạy bộ/đạp xe",
+      title: "Chạy bộ",
       size: 11,
       image: "assets/images/meohay.png",
       color: Color(0xFF6A0DAD)),

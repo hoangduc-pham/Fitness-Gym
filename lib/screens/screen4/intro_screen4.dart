@@ -13,7 +13,7 @@ class IntroScreen4 extends StatelessWidget {
     return Scaffold(
       backgroundColor: fitnessfunction.color,
       appBar: AppBar(
-        title: Text('Chạy bộ/đạp xe'),
+        title: Text('Chạy bộ'),
         backgroundColor: fitnessfunction.color,
         leading: IconButton(
           icon: SvgPicture.asset(
